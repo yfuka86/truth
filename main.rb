@@ -33,7 +33,7 @@ module World
     end
 
     def propositions
-      atoms + bottom + negations + disjunctions + conjunctions + conditionals
+      atoms + negations + disjunctions + conjunctions + conditionals
     end
 
     KINDOF_PROPOSITION.each do |sym|
@@ -169,7 +169,7 @@ end
 Ng = Negation
 
 # 論理積
-class Conjunction < Proposition
+class Conjunction < PropositionalConnective
   attr_accessor :proposition1, :proposition2
 
   def initialize(proposition1, proposition2)
@@ -198,7 +198,7 @@ end
 AND = Conjunction
 
 # 論理和
-class Disjunction < Proposition
+class Disjunction < PropositionalConnective
   attr_accessor :proposition1, :proposition2
 
   def initialize(proposition1, proposition2)
@@ -231,7 +231,7 @@ class Disjunction < Proposition
 end
 OR = Disjunction
 
-class Conditional < Proposition
+class Conditional < PropositionalConnective
   attr_accessor :proposition1, :proposition2
 
   def initialize(proposition1, proposition2)
