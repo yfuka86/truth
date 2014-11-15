@@ -18,7 +18,6 @@ module World
 
     def <<(proposition)
       # TODO 同じものがあったときの判定はここでやる
-      # TODO 可能態を作れるように。
       case proposition
       when Atom        then @truth[:atoms]         << proposition
       when Bottom      then @truth[:bottom]        << proposition
